@@ -1,6 +1,6 @@
-# Generated types for googleapis/rpc.
+## Generated types for [googleapis/rpc](https://github.com/googleapis/googleapis/tree/master/google/rpc).
 
-## Installation
+### Installation
 
 ```shell
 composer require thesis/googleapis-rpc-types
