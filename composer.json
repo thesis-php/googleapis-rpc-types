@@ -23,10 +23,6 @@
         "thesis/protobuf": "^0.1.1",
         "thesis/protobuf-known-types": "^0.1.0"
     },
-    "require-dev": {
-        "phpunit/phpunit": "^12.4",
-        "symfony/var-dumper": "^8.0"
-    },
     "autoload": {
         "psr-4": {
             "Google\\Rpc\\": "src/"
