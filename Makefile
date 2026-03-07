@@ -126,12 +126,17 @@ check: fixer-check rector-check composer-validate composer-normalize-check deps-
 .PHONY: check
 
 compile: ## Compile googleapis/rpc types
-	protoc -I./third_party/googleapis \
-	    --plugin=protoc-gen-custom-plugin=/usr/local/bin/protoc-gen-php \
-	    google/rpc/status.proto \
-	    google/rpc/error_details.proto \
-	    google/rpc/code.proto \
-	    --custom-plugin_out=src_path=.:src
+	$(DOCKER) run --rm \
+		--pull always \
+        --user 1000:1000 \
+        -v $(PWD):/workspace \
+        -w /workspace \
+        ghcr.io/thesis-php/protoc-plugin:latest \
+        -I./third_party/googleapis \
+        --php-plugin_out=src_path=.:src \
+		google/rpc/status.proto \
+        google/rpc/error_details.proto \
+        google/rpc/code.proto
 .PHONY: compile
 
 # -----------------------
