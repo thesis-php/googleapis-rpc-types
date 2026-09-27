@@ -20,12 +20,12 @@
     "require": {
         "php": "^8.4",
         "thesis/protobuf": "^0.2",
-        "thesis/protobuf-known-types": "^0.2",
+        "thesis/protobuf-known-types": "^0.3",
         "thesis/protoregistry": "^0.1.2"
     },
     "autoload": {
         "psr-4": {
-            "Google\\Rpc\\": "src/"
+            "Thesis\\Google\\Rpc\\": "src/"
         },
         "files": [
             "src/autoload.metadata.php"
